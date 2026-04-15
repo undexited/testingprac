@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
 
-$launcher = "C:\Users\helme\OneDrive\Documents\codexplay\setup\launch-local-ai-app.ps1"
-if (-not (Test-Path $launcher)) {
-    throw "Launcher not found: $launcher"
+$launcherVbs = "C:\Users\helme\OneDrive\Documents\codexplay\setup\launch-local-ai-app.vbs"
+if (-not (Test-Path $launcherVbs)) {
+    throw "Launcher not found: $launcherVbs"
 }
 
 $desktopPath = [Environment]::GetFolderPath("Desktop")
@@ -10,8 +10,8 @@ $shortcutPath = Join-Path $desktopPath "Local AI App.lnk"
 
 $shell = New-Object -ComObject WScript.Shell
 $shortcut = $shell.CreateShortcut($shortcutPath)
-$shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$launcher`""
+$shortcut.TargetPath = "wscript.exe"
+$shortcut.Arguments = "`"$launcherVbs`""
 $shortcut.WorkingDirectory = "C:\Users\helme\OneDrive\Documents\codexplay"
 $shortcut.IconLocation = "C:\Users\helme\AppData\Local\Programs\Ollama\ollama app.exe,0"
 $shortcut.Save()
