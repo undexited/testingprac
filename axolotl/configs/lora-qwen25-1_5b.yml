@@ -1,0 +1,51 @@
+base_model: Qwen/Qwen2.5-1.5B-Instruct
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+is_llama_derived_model: false
+
+datasets:
+  - path: axolotl/data/train.jsonl
+    type: alpaca
+
+dataset_prepared_path: last_run_prepared
+val_set_size: 0.1
+output_dir: outputs/qwen25-1_5b-lora
+
+adapter: lora
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+sequence_len: 2048
+sample_packing: false
+pad_to_sequence_len: true
+
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+num_epochs: 2
+learning_rate: 0.0002
+optimizer: adamw_torch
+lr_scheduler: cosine
+warmup_steps: 20
+
+train_on_inputs: false
+group_by_length: false
+bf16: auto
+fp16: false
+tf32: true
+
+gradient_checkpointing: true
+flash_attention: true
+
+saves_per_epoch: 1
+eval_steps: 50
+save_steps: 50
+logging_steps: 10

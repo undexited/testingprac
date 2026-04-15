@@ -1,0 +1,18 @@
+# Python and virtual environments
+.venv/
+.venv-openwebui/
+__pycache__/
+*.pyc
+
+# Local runtime data
+.open-webui-data/
+.webui_secret_key
+openwebui.out.log
+openwebui.err.log
+
+# Downloaded installers/artifacts
+downloads/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

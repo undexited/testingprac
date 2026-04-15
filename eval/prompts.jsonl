@@ -1,0 +1,5 @@
+{"id":"latency_simple","prompt":"Give me 5 bullet points on improving local AI response speed."}
+{"id":"reasoning_tradeoff","prompt":"Should a small startup prioritize fast responses or deeper reasoning for customer support AI? Explain tradeoffs and recommendation."}
+{"id":"planning_execution","prompt":"Create a 7-day execution plan to launch a local AI assistant for internal team use."}
+{"id":"coding_debug","prompt":"A local API returns 500 intermittently. Give a triage checklist ordered by highest signal first."}
+{"id":"policy_style","prompt":"Rewrite this user response to be concise, confident, and non-defensive: 'I am not sure if this is right but maybe we can try something else'."}

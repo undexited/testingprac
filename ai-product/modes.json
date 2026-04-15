@@ -1,0 +1,12 @@
+{
+  "fast": {
+    "model": "local-fast",
+    "temperature": 0.2,
+    "num_predict": 220
+  },
+  "think": {
+    "model": "local-think",
+    "temperature": 0.4,
+    "num_predict": 700
+  }
+}
