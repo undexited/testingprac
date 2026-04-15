@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate install.sh syntax
+        run: bash -n install.sh
+
+      - name: Validate JSON files
+        run: |
+          jq empty ai-product/modes.json
+          jq -c . eval/prompts.jsonl >/dev/null
+
+      - name: Ensure key scripts exist
+        run: |
+          test -f setup/start-ai-stack.ps1
+          test -f setup/start-openwebui.ps1
+          test -f scripts/chat-local.ps1
+          test -f scripts/run-eval.ps1
