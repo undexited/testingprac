@@ -23,6 +23,6 @@ if (-not (Test-PortListening -Port 11434)) {
 
 if (-not (Test-PortListening -Port 8080)) {
     Start-Process -FilePath "powershell.exe" `
-        -ArgumentList "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $openWebUiStartScript `
+        -ArgumentList "-NoProfile", "-WindowStyle", "Hidden", "-ExecutionPolicy", "Bypass", "-File", $openWebUiStartScript `
         -WorkingDirectory $root | Out-Null
 }
