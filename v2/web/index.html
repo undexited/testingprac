@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TestingPrac AI v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="ambient a1"></div>
+  <div class="ambient a2"></div>
+  <div class="wrap">
+    <aside class="side glass">
+      <h1>TestingPrac AI</h1>
+      <p class="sub">v2.0 Multi-user Platform</p>
+      <div class="auth">
+        <input id="email" placeholder="email" />
+        <input id="name" placeholder="display name (register)" />
+        <input id="password" type="password" placeholder="password" />
+        <div class="row">
+          <button id="registerBtn">Register</button>
+          <button id="loginBtn" class="ghost">Login</button>
+        </div>
+      </div>
+      <hr />
+      <label>Mode</label>
+      <select id="mode">
+        <option value="fast">Fast</option>
+        <option value="think">Think</option>
+      </select>
+      <label>Provider</label>
+      <select id="provider">
+        <option value="">Default</option>
+        <option value="ollama">Ollama</option>
+        <option value="openai">OpenAI</option>
+        <option value="anthropic">Anthropic</option>
+      </select>
+      <button id="newChatBtn" class="ghost full">New Chat</button>
+      <div class="status" id="status">Not logged in</div>
+    </aside>
+    <main class="main glass">
+      <div id="messages" class="messages"></div>
+      <form id="sendForm" class="composer">
+        <textarea id="prompt" rows="3" placeholder="Message your AI..."></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
