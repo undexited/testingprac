@@ -13,6 +13,11 @@ openwebui.err.log
 # Downloaded installers/artifacts
 downloads/
 
+# Local runtime env/db for v2 app
+v2/.env
+v2/*.db
+v2/*.db-journal
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
