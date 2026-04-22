@@ -13,15 +13,15 @@ class Settings:
     app_host: str = os.getenv("APP_HOST", "127.0.0.1")
     app_port: int = int(os.getenv("APP_PORT", "8090"))
 
-    jwt_secret: str = os.getenv("JWT_SECRET", "change-me")
+    jwt_secret: str = os.getenv("JWT_SECRET", "change-me-change-me-change-me-1234")
     jwt_expires_minutes: int = int(os.getenv("JWT_EXPIRES_MINUTES", "10080"))
 
-    _local_db_default = Path(os.getenv("LOCALAPPDATA", ".")) / "testingprac-ai-v2" / "app.db"
+    _local_db_default = Path(os.getenv("LOCALAPPDATA", ".")) / "testingprac-ai-v2" / "app_v2_multi.db"
     _local_db_default.parent.mkdir(parents=True, exist_ok=True)
     _db_default_url = f"sqlite:///{_local_db_default.as_posix()}"
     database_url: str = os.getenv("DATABASE_URL", _db_default_url) or _db_default_url
 
-    default_provider: str = os.getenv("DEFAULT_PROVIDER", "ollama")
+    default_provider: str = os.getenv("DEFAULT_PROVIDER", "openai,anthropic,builtin")
     fast_model: str = os.getenv("FAST_MODEL", "local-fast")
     think_model: str = os.getenv("THINK_MODEL", "local-think")
 

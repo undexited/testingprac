@@ -22,11 +22,25 @@ class MeOut(BaseModel):
     id: int
     email: str
     display_name: str
+    is_admin: bool
+
+
+class MembershipOut(BaseModel):
+    organization_id: int
+    organization_name: str
+    role: str
+
+
+class WorkspaceOut(BaseModel):
+    id: int
+    organization_id: int
+    name: str
 
 
 class ConversationOut(BaseModel):
     id: int
     title: str
+    workspace_id: int
 
 
 class MessageOut(BaseModel):
@@ -43,8 +57,26 @@ class ChatIn(BaseModel):
     mode: str = Field(default="fast")
     provider: Optional[str] = None
     conversation_id: Optional[int] = None
+    workspace_id: Optional[int] = None
+    agent_id: Optional[str] = None
 
 
 class ChatOut(BaseModel):
     conversation_id: int
     assistant_message: MessageOut
+
+
+class LoginEventOut(BaseModel):
+    id: int
+    email: str
+    action: str
+    status: str
+    ip_address: str
+    user_agent: str
+    created_at: str
+
+
+class AgentOut(BaseModel):
+    id: str
+    name: str
+    description: str

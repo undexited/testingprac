@@ -1,6 +1,6 @@
 # TestingPrac AI Platform
 
-Primary product direction is now `v2.0` in `v2/`: a multi-user chat platform (ChatGPT/Anthropic-style architecture) with provider routing and first-party UI.
+Primary product direction is now `v2.0` in `v2/`: a multi-user chat platform (ChatGPT/Anthropic-style architecture) with provider routing and first-party desktop + web UI.
 
 ## v2.0 quick start
 
@@ -14,6 +14,12 @@ Open:
 
 - `http://127.0.0.1:8090`
 
+Desktop app (hidden launch, no visible PowerShell/CMD):
+
+```powershell
+wscript.exe "C:\Users\helme\OneDrive\Documents\codexplay\v2\launch_desktop.vbs"
+```
+
 Details:
 
 - `v2/README.md`
@@ -23,11 +29,12 @@ Details:
 - Multi-user auth (register/login/JWT)
 - Per-user chat history and conversations
 - Provider gateway routing:
-  - Ollama
   - OpenAI
   - Anthropic
+  - Builtin fallback (no external model dependency)
+  - Optional Ollama
 - Mode-based routing (`fast` / `think`)
-- First-party web app (no Open WebUI dependency)
+- First-party desktop + web app (no Open WebUI dependency)
 
 ## Legacy stack (v0.x)
 
