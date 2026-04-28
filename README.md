@@ -1,4 +1,4 @@
-# TestingPrac AI Platform
+# AI Platform
 
 Primary product direction is now `v2.0` in `v2/`: a multi-user chat platform (ChatGPT/Anthropic-style architecture) with provider routing and first-party desktop + web UI.
 
